@@ -9,7 +9,7 @@ from fun import settings
 import os
 
 
-class FunPipeline(object):
+class ImageDownloadPipeline(object):
     def process_item(self, item, spider):
         if 'image_urls' in item:
             images = []
