@@ -13,7 +13,7 @@ BOT_NAME = 'fun'
 SPIDER_MODULES = ['fun.spiders']
 NEWSPIDER_MODULE = 'fun.spiders'
 
-ITEM_PIPELINES = {'fun.pipelines.FunPipeline': 1}
+ITEM_PIPELINES = {'fun.pipelines.ImageDownloadPipeline': 1}
 
 IMAGES_STORE = '/tmp/images'
 
