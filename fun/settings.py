@@ -18,4 +18,4 @@ ITEM_PIPELINES = {'fun.pipelines.ImageDownloadPipeline': 1}
 IMAGES_STORE = '/tmp/images'
 
 
-# DOWNLOAD_DELAY = 0.25    # 250 ms of delay
+DOWNLOAD_DELAY = 0.25    # 250 ms of delay
