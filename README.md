@@ -21,3 +21,4 @@ By [Bohan](https://github.com/ZhangBohan).
 ## Usage
 
  * 妹子图：`python run.py crawl meizitu`
+ * coser `scrapy crawl coser -o items.csv -t csv`

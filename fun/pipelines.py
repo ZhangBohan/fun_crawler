@@ -13,16 +13,15 @@ class ImageDownloadPipeline(object):
     def process_item(self, item, spider):
         if 'image_urls' in item:
             images = []
-            index = 0
             dir_path = '%s/%s' % (settings.IMAGES_STORE, spider.name)
 
             if not os.path.exists(dir_path):
                 os.makedirs(dir_path)
-
             for image_url in item['image_urls']:
-                l = image_url.split('/')
-                image_file_name = l[len(l) - 1]
-                file_path = '%s/%s_%s' % (dir_path, index, image_file_name)
+                us = image_url.split('/')[3:]
+                image_file_name = '_'.join(us)
+                file_path = '%s/%s' % (dir_path, image_file_name)
+                images.append(file_path)
                 if os.path.exists(file_path):
                     continue
 
@@ -33,6 +32,6 @@ class ImageDownloadPipeline(object):
                             break
 
                         handle.write(block)
-                index += 1
+
             item['images'] = images
         return item

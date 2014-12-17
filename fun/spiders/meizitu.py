@@ -22,7 +22,7 @@ class MeizituSpider(scrapy.Spider):
         print('pages: %s' % pages)
         if len(pages) > 2:
             page_link = pages[-2]
-            page_link = page_link.replace('/a/', '')    # 不知道为什么爬首页时会带a，做一下防御
+            page_link = page_link.replace('/a/', '')
             request = scrapy.Request('http://www.meizitu.com/a/%s' % page_link, callback=self.parse)
             yield request
 
