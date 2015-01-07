@@ -9,7 +9,9 @@ class CoserSpider(scrapy.Spider):
     name = "coser"
     allowed_domains = ["bcy.net"]
     start_urls = (
-        'http://bcy.net/cn102619',
+        'http://bcy.net/cn125101',
+        'http://bcy.net/cn126487',
+        'http://bcy.net/cn126173'
     )
 
     def parse(self, response):
